@@ -13,16 +13,16 @@ import javax.swing.JOptionPane;
  * @author Weslley Leocadio
  */
 public class pnivel1 extends javax.swing.JFrame {
- ArrayList<Questao> arrayQuestoes = new ArrayList<>();
-   private String user;
-   
-   public void user(String u) {
+
+    ArrayList<Questao> arrayQuestoes = new ArrayList<>();
+    private String user;
+
+    public void user(String u) {
         user = u;
     }
-   
+
     public pnivel1() {
         initComponents();
-        
 
         questoes1 q1 = new questoes1();
         arrayQuestoes = q1.Questao1();
@@ -223,7 +223,7 @@ public class pnivel1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Desistir1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Desistir1ActionPerformed
-        new Quiz().setVisible(true);      
+        new Quiz().setVisible(true);
         dispose();
     }//GEN-LAST:event_Desistir1ActionPerformed
     int x = 0;
@@ -233,9 +233,10 @@ public class pnivel1 extends javax.swing.JFrame {
             enunciado1.setText(enunciado.get(x));
             System.out.println(arrayQuestoes.get(x).getEnunciado());
             numeroQ1.setText(String.valueOf(++x));
-        }else{
-                        JOptionPane.showMessageDialog(null, "Limite de questoes atingidas");
+        } else {
+            JOptionPane.showMessageDialog(null, "Limite de questoes atingidas");
     }//GEN-LAST:event_jButton1ActionPerformed
+    }
 
     /**
      * @param args the command line arguments
