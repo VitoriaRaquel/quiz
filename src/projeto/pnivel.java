@@ -17,8 +17,8 @@ public class pnivel extends javax.swing.JFrame {
     /**
      * Creates new form pnivel
      */
-    ArrayList<Questao> arrayQuestoes = new ArrayList<>();
     private String user;
+    Questoes3 q3 = new Questoes3();
 
     public void user(String u) {
         user = u;
@@ -26,24 +26,23 @@ public class pnivel extends javax.swing.JFrame {
 
     public pnivel() {
         initComponents();
+        buttonGroup2.add(rA);
+        buttonGroup2.add(rB);
+        buttonGroup2.add(rC);
+        buttonGroup2.add(rD);
+        buttonGroup2.add(rE);
 
-        Questoes3 q3 = new Questoes3();
-        arrayQuestoes = q3.randomizar();
-        enunciado3.setText(arrayQuestoes.get(0).enunciado);
+        
+        int numeroSorteado = q3.randomizar();
+        Questao q = q3.questao.get(numeroSorteado);
+        enunciado3.setText(q.enunciado);
+        rA.setText(q.getA());
+        rB.setText(q.getB());
+        rC.setText(q.getC());
+        rD.setText(q.getD());
+        rE.setText(q.getE());
         txtUser.setText(user);
         System.out.println(user);
-        enunciado.add("Questao 1");
-        enunciado.add("Questao 2");
-        enunciado.add("Questao 3");
-        enunciado.add("Questao 4");
-        enunciado.add("Questao 5");
-        enunciado.add("Questao 6");
-        enunciado.add("Questao 7");
-        enunciado.add("Questao 8");
-        enunciado.add("Questao 9");
-        enunciado.add("Questao 10");
-
-
 
     }
 
@@ -57,6 +56,7 @@ public class pnivel extends javax.swing.JFrame {
     private void initComponents() {
 
         jFrame1 = new javax.swing.JFrame();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         Questãolbl = new javax.swing.JLabel();
         enunciado3 = new javax.swing.JLabel();
@@ -219,9 +219,15 @@ public class pnivel extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if (x < arrayQuestoes.size()) {
-            enunciado3.setText(enunciado.get(x));
-            System.out.println(arrayQuestoes.get(x).getEnunciado());
+        if (x < q3.questao.size()) {
+            int numeroSorteado = q3.randomizar();
+        Questao q = q3.questao.get(numeroSorteado);
+        enunciado3.setText(q.enunciado);
+        rA.setText(q.getA());
+        rB.setText(q.getB());
+        rC.setText(q.getC());
+        rD.setText(q.getD());
+        rE.setText(q.getE());
             qRespondida.setText(String.valueOf(++x));
         }else{
                         JOptionPane.showMessageDialog(null, "Limite de questoes atingidas");
@@ -283,6 +289,7 @@ public class pnivel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Questãolbl;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel enunciado3;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

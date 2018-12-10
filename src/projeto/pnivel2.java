@@ -25,7 +25,8 @@ public class pnivel2 extends javax.swing.JFrame {
     public pnivel2() {
         initComponents();
         Questoes3 q3 = new Questoes3();
-        arrayQuestoes = q3.randomizar();
+        int numeroSorteado = q3.randomizar();
+        Questao q = q3.questao.get(numeroSorteado);
         enunciado2.setText(arrayQuestoes.get(0).enunciado);
         usertext.setText(user);
         System.out.println(user);

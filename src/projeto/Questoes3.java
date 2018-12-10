@@ -22,9 +22,18 @@ class Questoes3 {
     ///Random gerador = new Random(1);
     ///int x = gerador.nextInt(16);
     
-    public ArrayList<Questao> randomizar(){
+    public Questoes3(){
+        popularColecao();
+    }
+    
+    public int randomizar(){
         Random r = new Random();
+        int numeroSorteado = r.nextInt(10);
         
+        return numeroSorteado;
+    }
+    
+    public void popularColecao(){
         Questao y = new Questao();
         y.enunciado =" *(MACK) Calcule o valor do determinante: \n"
                 + "|1 1 3 1|\n"
@@ -40,7 +49,7 @@ class Questoes3 {
         questao.add(y);
 
         //RESPOSTA: C*
-
+        y = new Questao();
         y.enunciado="Calcule o valor do determinante \n"
                 + "| 2  3  -1  0 |\n"
                 + "| 4 -2   1  3 |\n"
@@ -56,7 +65,7 @@ class Questoes3 {
                
               
        //RESPOSTA: A*
-
+       y = new Questao();
         y.enunciado="Calcule o valor do determinante \n"
                 + "| 3  1  -2  1 |\n"
                 + "| 5  2   2  3 |\n"
@@ -70,7 +79,7 @@ class Questoes3 {
         y.questaoCorreta=y.c;
         questao.add(y);
    //RESPOSTA: C*
-
+        y = new Questao();
         y.enunciado="Calcule o valor do determinante \n"
                 + "| 4  0   0  0 |\n"
                 + "| 2 -1   3  1 |\n"
@@ -85,7 +94,7 @@ class Questoes3 {
               questao.add(y);
               
      //RESPOSTA: D*
-
+     y = new Questao();
         y.enunciado="- O determinante da matriz A abaixo vale 2 \n"
              +  " A=| a  b  c  d |\n"
              +   "  | e  f  g  h |\n"
@@ -107,7 +116,7 @@ class Questoes3 {
         questao.add(y);
         
 
-
+        y = new Questao();
         y.enunciado="Considere a seguinte matriz: |x 0 0 0|\n"
 		+"                                |1 x 1 2|\n"
 		+"                                |2 0 x 3|\n"
@@ -122,7 +131,7 @@ class Questoes3 {
         y.questaoCorreta=y.d; 
         questao.add(y);
         //resposta d
-
+        y = new Questao();
         y.enunciado= " O determinante da matriz: |1 -1 2 0|\n" 
                     +"                           |0  3 4 0|\n" 
                     +"                           |5  1 2 0|\n" 
@@ -136,7 +145,7 @@ class Questoes3 {
         y.questaoCorreta=y.b;
         questao.add(y);
         //resposta: b*
-
+        y = new Questao();
         y.enunciado="o valor do determinante é:"
                + " |1 1 3 1| \n" 
                +"  |1 3 3 2|\n"
@@ -150,7 +159,7 @@ class Questoes3 {
         y.questaoCorreta=y.c;
         questao.add(y);
        //resposta:c*
-
+       y = new Questao();
        y.enunciado="o valor do determinante é:"
                + " | 1  0  2 0| \n" 
                +"  | 3 -2  1 5|\n"
@@ -165,12 +174,13 @@ class Questoes3 {
         questao.add(y);
         
    //resposta: b
-        y.enunciado="o valor do determinante é:"
+        y = new Questao();
+        y.enunciado="<html>o valor do determinante é:<br/>"
                 
-               + " | 1 1 1 -1| \n" 
-               +"  | 0 1 0  0|\n"
-               +"  | 1 0 0  0|\n"
-               +"  |-1 2 0  1|\n";
+               + " | 1 1 1 -1| <br/>" 
+               +"  | 0 1 0  0| <br/>"
+               +"  | 1 0 0  0| <br/>"
+               +"  |-1 2 0  1| <br/></html>";
         y.a="1";
         y.b="2";
         y.c="0";
@@ -179,6 +189,5 @@ class Questoes3 {
         y.questaoCorreta=y.d;
        //resposta: d
        questao.add(y);
-        return questao;
     }
 }
